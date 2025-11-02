@@ -7,7 +7,7 @@
 
 ### Assumptions/Not Implemented
 
-* Riders will only get on the elevator if it is following the direction they want to travel in
+* Riders will only get on the elevator unless it is following the direction they want to travel in
 * The Elevator Class and Building Class will be run in a Simulation that calls a step function to simulate time passing for the Elevator
 * The Building Logic and simulation display currently support only one elevator, but are designed to allow future expansion
 * Passengers instantly board and exit the elevator (no loading or unloading delay)
