@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cab8ade-9917-4ac0-9953-517880ad66e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/ElevatorSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/ElevatorSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +57,11 @@
     "last_opened_file_path": "/Users/atharva/Documents/Projects/atharva_nevasekar_elevator"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ElevatorSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atharva.elevator.ElevatorSimulation" />

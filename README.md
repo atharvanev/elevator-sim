@@ -13,3 +13,27 @@
 * Passengers instantly board and exit the elevator (no loading or unloading delay)
 * Passengers cannot cancel or modify their requests once added
 * Elevator doors are assumed to always open and close instantly 
+
+
+
+## Run Instructions
+
+Go to the correct file location
+```commandline
+cd src/main/java 
+```
+Compile the code
+```commandline
+javac com/atharva/elevator/*.java
+```
+Run the compiled Code
+```commandline
+ java com.atharva.elevator.ElevatorSimulation
+```
+
+JAVA version
+```commandline
+openjdk 17.0.17 2025-10-21 LTS
+OpenJDK Runtime Environment Microsoft-12574438 (build 17.0.17+10-LTS)
+OpenJDK 64-Bit Server VM Microsoft-12574438 (build 17.0.17+10-LTS, mixed mode, sharing)
+```
