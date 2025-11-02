@@ -22,6 +22,5 @@ public class Building {
 
     public List<Request> getWaitingPassengers(int floor) {
         return floors.get(floor);
-
     }
 }

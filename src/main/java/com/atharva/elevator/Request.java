@@ -5,7 +5,7 @@ public class Request {
     private int to;
     private int capacity;
 
-    public Request(int floor,int to,int capacity) {
+    public Request(int floor,int to) {
         this.from = floor;
         this.to = to;
     }

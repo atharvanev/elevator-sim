@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Sim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/ElevatorSimulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ElevatorSimulation.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -57,6 +60,26 @@
     "last_opened_file_path": "/Users/atharva/Documents/Projects/atharva_nevasekar_elevator"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="ElevatorSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atharva.elevator.ElevatorSimulation" />
+      <module name="atharva_nevasekar_elevator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atharva.elevator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ElevatorSimulation" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

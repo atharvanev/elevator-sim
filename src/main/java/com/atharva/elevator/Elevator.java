@@ -16,6 +16,9 @@ public class Elevator{
         this.floor = 0;
         this.capacity = 5;
         this.direction = 1;
+        this.current_capacity = 0;
+        this.up_requests = new PriorityQueue<>();
+        this.down_requests = new PriorityQueue<>(Collections.reverseOrder());
     }
 
     public Elevator(int floor, int capacity, int direction) {
@@ -35,7 +38,7 @@ public class Elevator{
                 arrive_at(floor, building);
             }
             if (direction !=0){
-                move();
+                move(building);
             }
         }
     }
@@ -90,6 +93,11 @@ public class Elevator{
     }
 
     private void updateDirection() {
+        if (current_capacity == 0 && up_requests.isEmpty() && down_requests.isEmpty()) {
+            direction = 0;
+            return;
+        }
+
         if (direction == 1) {
             if (up_requests.isEmpty()) {
                 if (!down_requests.isEmpty()) {
@@ -106,7 +114,15 @@ public class Elevator{
                     direction = 0;
                 }
             }
+        } else if (direction == 0) {
+            if (!up_requests.isEmpty()) {
+                direction = 1;
+            }
+            else if (!down_requests.isEmpty()) {
+                direction = -1;
+            }
         }
+        System.out.println(direction);
     }
 
     private void find_new_request (Building building){
@@ -131,6 +147,8 @@ public class Elevator{
                 direction = 1; // Go up
             } else if (nearest_floor < floor) {
                 direction = -1; // Go down
+            } else if ( nearest_floor == floor) {
+                arrive_at(floor, building);
             }
         }
     }
@@ -147,6 +165,7 @@ private boolean check_if_stop(Building building) {
 
     if (!isFull()) {
         List<Request> waiting = building.getWaitingPassengers(floor);
+
         for (Request request : waiting) {
             int requestDirection = Integer.compare(request.getTo(), floor);
             if (requestDirection == direction) {
@@ -157,8 +176,14 @@ private boolean check_if_stop(Building building) {
     return false;
 }
 
-public void move(){
-    floor+= direction;
+public void move(Building building) {
+        int new_floor = floor + direction;
+        if (new_floor >= 0 && new_floor < building.floors.size()) {
+            floor = new_floor;
+        }
+        else{
+            direction = 0;
+        }
 }
 
 // Getters
