@@ -8,7 +8,6 @@ public class Request {
     public Request(int floor,int to,int capacity) {
         this.from = floor;
         this.to = to;
-        this.capacity = capacity;
     }
 
     public int getFrom() { return from; }

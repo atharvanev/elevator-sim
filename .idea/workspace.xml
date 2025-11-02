@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cab8ade-9917-4ac0-9953-517880ad66e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Sim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atharva/elevator/Request.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,18 +25,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/atharvanev/elevator-sim.git",
-    "accountId": "c4405cc4-3df3-4a93-85b3-64c47bea889d"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/atharvanev/elevator-sim.git&quot;,
+    &quot;accountId&quot;: &quot;c4405cc4-3df3-4a93-85b3-64c47bea889d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="34ZUSmEFqNyGmyfNGT1sm0SsFoS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,7 +54,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/atharva/Documents/Projects/atharva_nevasekar_elevator"
   }
 }]]></component>
   <component name="SharedIndexes">
