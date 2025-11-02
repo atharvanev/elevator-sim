@@ -7,17 +7,12 @@ public class ElevatorSimulation {
     private Building building;
     private Elevator elevator;
     private int currentStep;
-    private int totalWaitTime;
-    private int passengersDelivered;
     private List<ScheduledRequest> scheduledRequests;
-    private static final int BUILDING_HEIGHT = 25; // Lines for building display
 
     public ElevatorSimulation(int numFloors, int elevatorCapacity) {
         this.building = new Building(numFloors);
         this.elevator = new Elevator(0, elevatorCapacity, 0);
         this.currentStep = 0;
-        this.totalWaitTime = 0;
-        this.passengersDelivered = 0;
         this.scheduledRequests = new ArrayList<>();
     }
 
@@ -37,11 +32,6 @@ public class ElevatorSimulation {
     // Add a passenger request with a scheduled time
     public void addRequest(int fromFloor, int toFloor, int atStep) {
         scheduledRequests.add(new ScheduledRequest(fromFloor, toFloor, atStep));
-    }
-
-    // Add immediate request (backwards compatible)
-    public void addRequest(int fromFloor, int toFloor) {
-        addRequest(fromFloor, toFloor, 0);
     }
 
     // Process any scheduled requests that should happen this step
@@ -67,7 +57,7 @@ public class ElevatorSimulation {
         currentStep++;
 
         // Display the building AFTER the step
-        moveCursorToTop();
+        //moveCursorToTop();
         printBuilding();
 
         try {
@@ -79,23 +69,20 @@ public class ElevatorSimulation {
 
     public void run(int maxSteps) {
         System.out.println("=== Starting Elevator Simulation ===\n");
-        System.out.println("Building will appear below...\n");
+        System.out.println("Legend: [3/5↑] = Elevator (3 passengers, capacity 5, going up)");
+        System.out.println("        (2)    = 2 people waiting on floor");
+        System.out.println("        ↑ = Up | ↓ = Down | • = Idle\n");
+        System.out.println("Animation will start in 2 seconds...\n");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-        }
-
-        // Print initial empty building space
-        for (int i = 0; i < BUILDING_HEIGHT; i++) {
-            System.out.println();
         }
 
         while (currentStep < maxSteps) {
             step();
 
-            // Check completion after displaying the step
             if (isSimulationComplete()) {
                 // Show final state one more time to display idle elevator
                 try {
@@ -106,11 +93,6 @@ public class ElevatorSimulation {
 
                 System.out.println("\n\n=== All passengers delivered! ===");
                 System.out.println("Total steps: " + currentStep);
-                System.out.println("Passengers delivered: " + passengersDelivered);
-                if (passengersDelivered > 0) {
-                    System.out.printf("Average wait time: %.1f steps%n",
-                            (double) totalWaitTime / passengersDelivered);
-                }
                 break;
             }
         }
@@ -135,13 +117,6 @@ public class ElevatorSimulation {
         return false;
     }
 
-    // Move cursor to top of building display - works on all terminals
-    private void moveCursorToTop() {
-        // ANSI escape code to move cursor up
-        System.out.print("\033[" + BUILDING_HEIGHT + "A");
-        System.out.print("\r"); // Return to start of line
-    }
-
     private void printBuilding() {
         int numFloors = building.floors.size();
         int elevatorFloor = elevator.getFloor();
@@ -149,10 +124,9 @@ public class ElevatorSimulation {
         int capacity = elevator.getCapacity();
         String direction = getDirectionSymbol();
 
-        // Print building frame
-        printLine("╔════════════════════════════════════════╗");
-        printLine("║           ELEVATOR BUILDING            ║");
-        printLine("╠════════════════════════════════════════╣");
+        System.out.println("╔════════════════════════════════════════╗");
+        System.out.println("║           ELEVATOR BUILDING            ║");
+        System.out.println("╠════════════════════════════════════════╣");
 
         // Print floors from top to bottom
         for (int floor = numFloors - 1; floor >= 0; floor--) {
@@ -164,34 +138,16 @@ public class ElevatorSimulation {
 
             if (floor == elevatorFloor) {
                 String elevatorDisplay = String.format("[%d/%d%s]", load, capacity, direction);
-                printLine(String.format("║ %s │ %-8s %-20s ║", floorNum, waitingStr, elevatorDisplay));
+                System.out.printf("║ %s │ %-8s %-24s ║%n", floorNum, waitingStr, elevatorDisplay);
             } else {
-                printLine(String.format("║ %s │ %-8s %-20s ║", floorNum, waitingStr, ""));
+                System.out.printf("║ %s │ %-8s %-24s ║%n", floorNum, waitingStr, "");
             }
         }
 
-        printLine("╚════════════════════════════════════════╝");
-        printLine("");
-        printLine(String.format("Step: %d | Time: %d seconds | Direction: %s | Passengers: %d/%d",
-                currentStep, currentStep, getDirectionString(), load, capacity));
-        printLine(String.format("Delivered: %d | Avg Wait: %.1f steps",
-                passengersDelivered,
-                passengersDelivered > 0 ? (double) totalWaitTime / passengersDelivered : 0.0));
-        printLine("");
-        printLine("Legend: [3/5↑]=Elevator | (2)=Waiting");
-
-        // Fill remaining lines to maintain consistent height
-        int linesUsed = 6 + numFloors; // Frame + floors
-        for (int i = linesUsed; i < BUILDING_HEIGHT; i++) {
-            printLine("");
-        }
-    }
-
-    // Print a line and clear to end of line (removes old content)
-    private void printLine(String text) {
-        System.out.print("\r" + text);
-        System.out.print("\033[K"); // Clear to end of line
+        System.out.println("╚════════════════════════════════════════╝");
         System.out.println();
+        System.out.printf("Step: %d | Direction: %s | Load: %d/%d%n",
+                currentStep, getDirectionString(), load, capacity);
     }
 
     private String getDirectionSymbol() {
